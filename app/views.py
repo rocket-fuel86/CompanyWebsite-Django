@@ -2,59 +2,38 @@
 Definition of views.
 """
 
-from datetime import datetime
 from django.shortcuts import render
+from django.http import Http404
+from django.views import View
 
 def home(request):
     return render(
         request,
-        'app/index.html',
-        {
-            'year':datetime.now().year,
-        }
+        'index.html',
     )
 
-def news(request):
-    return render(
-        request,
-        'app/news.html',
-        {
-            'year':datetime.now().year,
-        }
-    )
+class NewsView(View):
+    def get(self, request):
+        return render(request, 'news.html')
+
+    @staticmethod
+    def subpath(request, **kwargs):
+        raise Http404("Сторінку в розділі Новини не знайдено")
 
 def management(request):
     return render(
         request,
-        'app/management.html',
-        {
-            'year':datetime.now().year,
-        }
+        'management.html',
     )
 
 def contacts(request):
     return render(
         request,
-        'app/contacts.html',
-        {
-            'year':datetime.now().year,
-        }
-    )
-
-def contacts(request):
-    return render(
-        request,
-        'app/contacts.html',
-        {
-            'year':datetime.now().year,
-        }
+        'contacts.html',
     )
 
 def about(request):
     return render(
         request,
-        'app/about.html',
-        {
-            'year':datetime.now().year,
-        }
+        'about.html',
     )
