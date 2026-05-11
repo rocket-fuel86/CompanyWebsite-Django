@@ -1,0 +1,326 @@
+/* ============================================
+   McDonald's Ukraine — Style Sheet
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900');
+
+/* ---------- Variables ---------- */
+:root {
+  --yellow: #FFC72C;
+  --red:    #DA291C;
+  --dark:   #1A1A1A;
+  --white:  #FFFFFF;
+  --gray:   #F5F5F5;
+  --text:   #333333;
+  --muted:  #777777;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,.10);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--yellow);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -.5px;
+}
+.navbar-brand span { color: var(--red); }
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav li a {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: .92rem;
+  color: var(--dark);
+  transition: background .2s, color .2s;
+}
+
+.nav li a:hover,
+.nav li a.active {
+  background: var(--red);
+  color: var(--white);
+}
+
+.main-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  min-height: calc(100vh - 64px - 60px);
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--yellow) 0%, #FFE066 100%);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  font-size: 280px;
+  font-weight: 700;
+  color: rgba(255,255,255,.2);
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  max-width: 600px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--dark);
+  max-width: 560px;
+  margin-bottom: 24px;
+  opacity: .85;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.15); }
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid #EBEBEB;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,.13);
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: .92rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+  line-height: 1.55;
+}
+
+.card .btn { font-size: .82rem; padding: 8px 20px; }
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid var(--yellow);
+  display: inline-block;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--gray);
+  border-left: 5px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+}
+
+.contacts-subtitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contacts-list li {
+  background: var(--gray);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.contacts-list a {
+  color: var(--red);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: var(--white);
+  border: 1px solid #EBEBEB;
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  transition: border-color .2s;
+}
+
+.news-item:hover { border-color: var(--yellow); }
+
+.news-item h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.45;
+}
+
+.news-item .btn { flex-shrink: 0; }
+
+.management-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  color: var(--text);
+}
+
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.career-item {
+  background: var(--gray);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.6;
+  border-left: 4px solid var(--yellow);
+}
+
+.career-item strong {
+  color: var(--dark);
+  font-weight: 800;
+}
+
+.error-page {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.error-page .error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--yellow);
+  line-height: 1;
+  font-family: 'Playfair Display', serif;
+}
+
+.error-page h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 12px 0 8px;
+  color: var(--dark);
+}
+
+.error-page p {
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,.55);
+  text-align: center;
+  padding: 18px 24px;
+  font-size: .85rem;
+}
+
+footer span { color: var(--yellow); font-weight: 700; }
+
+@media (max-width: 640px) {
+  .navbar { padding: 0 16px; }
+  .nav li a { padding: 6px 12px; font-size: .82rem; }
+  .hero { padding: 36px 24px; }
+  .hero h1 { font-size: 1.55rem; }
+  .main-wrapper { padding: 28px 16px 24px; }
+  .news-item { flex-direction: column; align-items: flex-start; }
+}
