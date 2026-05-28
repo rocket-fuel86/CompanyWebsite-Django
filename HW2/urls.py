@@ -12,6 +12,7 @@ urlpatterns = [
     path('news/', views.NewsView.as_view(), name='news'),
     re_path(r'^news/.+', views.NewsView.subpath, name='news_subpath'),
     path('management/', views.management, name='management'),
+    path('product/', views.product, name='product'),
     path('contacts/', views.contacts, name='contacts'),
     path('about/', views.about, name='about'),
     path('admin/', admin.site.urls),

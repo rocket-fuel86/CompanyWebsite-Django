@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container mt-5">
+    <h2>{{ title|default:"Створення товару" }}</h2>
+    <p class="text-muted">Будь ласка, заповніть дані та прикріпіть файли</p>
+    <hr>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="row g-3">
+        {% csrf_token %}
+
+        <div class="col-12">
+            {{ form.as_div }}
+        </div>
+
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+                Створити товар
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

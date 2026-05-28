@@ -1,10 +1,36 @@
 """
 Definition of views.
 """
+from datetime import datetime
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
+from django.contrib import messages
 from django.views import View
+
+from app.forms import ProductForm
+from app.models import Product
+
+
+def product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Товар успішно додано!")
+            return redirect('product')
+    else:
+        form = ProductForm()
+
+    products = Product.objects.all()
+
+    return render(request, 'product.html', {
+        'form': form,
+        'title': 'Відправка резюме',
+        'products': products,
+        'year': datetime.now().year,
+    })
 
 def home(request):
     return render(
