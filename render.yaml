@@ -1,5 +1,6 @@
 services:
   - type: web
+    name: companywebsite-django
     env: python
     plan: free
 
@@ -16,10 +17,11 @@ services:
         value: "False"
 
       - key: ALLOWED_HOSTS
-        value: ".onrender.com"
+        value: "companywebsite-django.onrender.com"
 
       - key: PYTHON_VERSION
         value: "3.14"
+    runtime: python
 
 databases:
   - name: my-django-db

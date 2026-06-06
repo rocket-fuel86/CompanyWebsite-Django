@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90fdc72a-3038-4f9b-ade3-1a16771fa7a6" name="Changes" comment="Fix static">
+    <list default="true" id="90fdc72a-3038-4f9b-ade3-1a16771fa7a6" name="Changes" comment="Fix static directory naming for render.com">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW2/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
       <workItem from="1780724615668" duration="1561000" />
       <workItem from="1780732976154" duration="2702000" />
       <workItem from="1780736141857" duration="1592000" />
-      <workItem from="1780750469700" duration="169000" />
+      <workItem from="1780750469700" duration="758000" />
     </task>
     <task id="LOCAL-00001" summary="Added Product and ProductForm">
       <option name="closed" value="true" />
@@ -160,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780737493525</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix static directory naming for render.com">
+      <option name="closed" value="true" />
+      <created>1780750672628</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780750672628</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +181,7 @@
     <MESSAGE value="Adapted for render.com" />
     <MESSAGE value="Fix staticfiles" />
     <MESSAGE value="Fix static" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix static" />
+    <MESSAGE value="Fix static directory naming for render.com" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix static directory naming for render.com" />
   </component>
 </project>
