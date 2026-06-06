@@ -11,7 +11,14 @@
 
     <nav class="navbar">
         <a href="{% url 'home' %}" class="navbar-brand">Mc<span>Donald's</span></a>
-        <ul class="nav">
+
+        <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav" id="navMenu">
             <li><a href="{% url 'news' %}">Новини</a></li>
             <li><a href="{% url 'management' %}">Кар'єра</a></li>
             <li><a href="{% url 'about' %}">Про нас</a></li>
@@ -27,6 +34,21 @@
             &copy; 2026 &mdash; McDonald's Ukraine
         </footer>
     </div>
+
+    <script>
+        const btn = document.getElementById('burgerBtn');
+        const menu = document.getElementById('navMenu');
+        btn.addEventListener('click', () => {
+            const open = menu.classList.toggle('nav--open');
+            btn.classList.toggle('burger--open', open);
+            btn.setAttribute('aria-expanded', open);
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            menu.classList.remove('nav--open');
+            btn.classList.remove('burger--open');
+            btn.setAttribute('aria-expanded', false);
+        }));
+    </script>
 
     {% block scripts %}{% endblock %}
 </body>
